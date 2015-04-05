@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="1_azure-mobile-services-android-sdk-2.0.2-beta2">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/app/libs/azure-mobile-services-android-sdk-2.0.2-beta2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/app/libs/azure-mobile-services-android-sdk-2.0.2-beta2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
