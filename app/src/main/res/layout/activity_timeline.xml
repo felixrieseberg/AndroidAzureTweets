@@ -8,41 +8,35 @@
     <EditText
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:inputType="textMultiLine"
+        android:inputType="textShortMessage|textAutoCorrect|textMultiLine"
         android:ems="10"
         android:id="@+id/tweetInput"
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:hint="Tweet something nice!" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:ems="10"
-        android:id="@+id/authorInput"
-        android:layout_below="@+id/tweetInput"
-        android:layout_alignParentStart="true"
-        android:hint="Username"
+        android:hint="Tweet something nice!"
+        android:elegantTextHeight="true"
+        android:lines="2"
         android:layout_toStartOf="@+id/tweetButton" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Tweet"
+    <ImageButton
         android:id="@+id/tweetButton"
-        android:layout_below="@+id/tweetInput"
-        android:layout_alignBottom="@+id/authorInput"
-        android:layout_alignEnd="@+id/tweetInput"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_gravity="bottom|right"
+        android:background="@drawable/fab_ripple"
+        android:elevation="2dp"
         android:onClick="AddTweet"
-        android:padding="10dp" />
+        android:padding="10dp"
+        android:src="@drawable/ic_action_add"
+        android:contentDescription="Tweet"
+        android:layout_above="@+id/tweetListView"
+        android:layout_alignEnd="@+id/tweetListView" />
 
     <ListView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/tweetListView"
-        android:layout_below="@+id/authorInput"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/tweetInput" />
 
 </RelativeLayout>
