@@ -2,6 +2,7 @@ package com.microsoft.felixrieseberg.azuretweets;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.Menu;
@@ -42,6 +43,8 @@ public class TimelineActivity extends Activity {
     private ListView tweetsListView;
     private Button tweetButton;
 
+    private String author;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -61,7 +64,6 @@ public class TimelineActivity extends Activity {
 
         // Get our input elements
         tweetInput = (EditText) findViewById(R.id.tweetInput);
-        authorInput = (EditText) findViewById(R.id.authorInput);
         tweetsListView = (ListView) findViewById(R.id.tweetListView);
 
         // Bind the list of tweets to the adapter
@@ -73,15 +75,18 @@ public class TimelineActivity extends Activity {
     }
 
     public void AddTweet() {
-        if (mobileServiceClient == null) {
+        // If the service is null or the author isn't set yet,
+        // return right away and let the user try again.
+        if (mobileServiceClient == null || EnsureAuthor() == false) {
             return;
         }
 
         // Create the Tweet object
         final Tweet item = new Tweet();
         item.text = tweetInput.getText().toString();
-        item.author = authorInput.getText().toString();
+        item.author = author;
 
+        // Send the tweet away to the service
         new AsyncTask<Void, Void, Void>(){
             @Override
             protected Void doInBackground(Void... params) {
@@ -101,6 +106,7 @@ public class TimelineActivity extends Activity {
             }
         }.execute();
 
+        // Set the input field back to empty.
         tweetInput.setText("");
     }
 
@@ -137,6 +143,14 @@ public class TimelineActivity extends Activity {
         }.execute();
     }
 
+    public boolean EnsureAuthor() {
+        if (author == null || author == "") {
+            setUsername();
+            return false;
+        } else {
+            return true;
+        }
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -191,5 +205,23 @@ public class TimelineActivity extends Activity {
         builder.setMessage(message);
         builder.setTitle(title);
         builder.create().show();
+    }
+
+    private void setUsername() {
+        AlertDialog.Builder alert = new AlertDialog.Builder(this);
+
+        alert.setTitle("Login");
+        alert.setMessage("Please enter your e-mail address or name:");
+
+        final EditText input = new EditText(this);
+        alert.setView(input);
+
+        alert.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int whichButton) {
+                author = input.getText().toString();
+            }
+        });
+
+        alert.show();
     }
 }

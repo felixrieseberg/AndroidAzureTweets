@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -11,12 +11,42 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Author"
-        style="@style/TextAppearance.AppCompat.Small" />
+        style="@style/TextAppearance.AppCompat.Subhead"
+        android:paddingTop="0dp"
+        android:paddingLeft="5dp"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/avatar" />
+
+    <TextView
+        android:id="@+id/timeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Time"
+        style="@style/TextAppearance.AppCompat.Small"
+        android:paddingTop="0dp"
+        android:paddingLeft="5dp"
+        android:layout_above="@+id/tweetText"
+        android:layout_toEndOf="@+id/avatar" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/avatar"
+        android:contentDescription="Avatar"
+        android:maxWidth="40dp"
+        android:maxHeight="40dp"
+        android:minHeight="40dp"
+        android:minWidth="40dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
 
     <TextView
         android:id="@+id/tweetText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Tweet"
-        style="@style/TextAppearance.AppCompat.Large" />
-</LinearLayout>
+        android:text="Hi my name is Felix and I am a sample tweet. I&apos;m just trying to fill the amount of characters available... because why not. This is after al"
+        style="@style/TextAppearance.AppCompat.Medium"
+        android:layout_below="@+id/avatar"
+        android:layout_alignParentStart="true" />
+
+</RelativeLayout>

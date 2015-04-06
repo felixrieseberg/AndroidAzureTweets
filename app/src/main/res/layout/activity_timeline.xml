@@ -16,7 +16,8 @@
         android:hint="Tweet something nice!"
         android:elegantTextHeight="true"
         android:lines="2"
-        android:layout_toStartOf="@+id/tweetButton" />
+        android:layout_toStartOf="@+id/tweetButton"
+        android:maxLength="140" />
 
     <ImageButton
         android:id="@+id/tweetButton"
@@ -37,6 +38,8 @@
         android:layout_height="wrap_content"
         android:id="@+id/tweetListView"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/tweetInput" />
+        android:layout_below="@+id/tweetInput"
+        android:choiceMode="none"
+        android:headerDividersEnabled="true" />
 
 </RelativeLayout>
