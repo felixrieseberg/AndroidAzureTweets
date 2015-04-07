@@ -4,5 +4,8 @@
     <item android:id="@+id/action_refresh" android:title="Refresh Tweets"
         android:orderInCategory="100" app:showAsAction="always" android:icon="@drawable/ic_action_refresh" />
     <item android:id="@+id/action_aboutshow" android:title="About"
-        android:orderInCategory="100" app:showAsAction="always" android:icon="@drawable/ic_action_about" />
+        android:orderInCategory="150" app:showAsAction="always" android:icon="@drawable/ic_action_about" />
+    <item android:id="@+id/action_changeUsername" android:title="Change Username"
+        android:orderInCategory="200" app:showAsAction="never" />
+
 </menu>

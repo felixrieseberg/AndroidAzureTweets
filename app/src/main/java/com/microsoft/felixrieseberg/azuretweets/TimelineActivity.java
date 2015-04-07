@@ -145,7 +145,7 @@ public class TimelineActivity extends Activity {
 
     public boolean EnsureAuthor() {
         if (author == null || author == "") {
-            setUsername();
+            SetUsername();
             return false;
         } else {
             return true;
@@ -170,6 +170,8 @@ public class TimelineActivity extends Activity {
         if (id == R.id.action_refresh) {
             GetTweets();
             return true;
+        } else if (id == R.id.action_changeUsername) {
+            SetUsername();
         }
 
         return super.onOptionsItemSelected(item);
@@ -207,7 +209,7 @@ public class TimelineActivity extends Activity {
         builder.create().show();
     }
 
-    private void setUsername() {
+    private void SetUsername() {
         AlertDialog.Builder alert = new AlertDialog.Builder(this);
 
         alert.setTitle("Login");

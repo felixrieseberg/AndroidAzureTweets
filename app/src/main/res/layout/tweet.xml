@@ -47,6 +47,7 @@
         android:text="Hi my name is Felix and I am a sample tweet. I&apos;m just trying to fill the amount of characters available... because why not. This is after al"
         style="@style/TextAppearance.AppCompat.Medium"
         android:layout_below="@+id/avatar"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:textColor="@color/abc_primary_text_material_light" />
 
 </RelativeLayout>
