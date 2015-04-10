@@ -90,11 +90,13 @@
     <orderEntry type="library" exported="" name="picasso-2.5.2" level="project" />
     <orderEntry type="library" exported="" name="1_picasso-2.5.2" level="project" />
     <orderEntry type="library" exported="" name="azure-mobile-services-android-sdk-2.0.2-beta2-javadoc" level="project" />
-    <orderEntry type="library" exported="" name="gson-2.3" level="project" />
+    <orderEntry type="library" exported="" name="play-services-base-7.0.0" level="project" />
     <orderEntry type="library" exported="" name="azure-mobile-services-android-sdk-2.0.2-beta2" level="project" />
     <orderEntry type="library" exported="" name="1_azure-mobile-services-android-sdk-2.0.2-beta2" level="project" />
+    <orderEntry type="library" exported="" name="gson-2.3" level="project" />
     <orderEntry type="library" exported="" name="azure-mobile-services-android-sdk-2.0.2-beta2-sources" level="project" />
     <orderEntry type="library" exported="" name="support-v4-22.0.0" level="project" />
+    <orderEntry type="library" exported="" name="azure-notifications-handler-1.0.1" level="project" />
     <orderEntry type="library" exported="" name="support-annotations-22.0.0" level="project" />
   </component>
 </module>

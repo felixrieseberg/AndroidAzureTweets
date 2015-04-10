@@ -15,27 +15,19 @@ import android.widget.ListView;
 import java.util.ArrayList;
 import java.util.List;
 
-// Azure Mobile App Service
-import com.google.common.util.concurrent.FutureCallback;
-import com.google.common.util.concurrent.Futures;
-import com.google.common.util.concurrent.ListenableFuture;
-import com.google.common.util.concurrent.SettableFuture;
+// Azure Mobile Services
 import com.microsoft.windowsazure.mobileservices.MobileServiceClient;
-import com.microsoft.windowsazure.mobileservices.http.NextServiceFilterCallback;
-import com.microsoft.windowsazure.mobileservices.http.ServiceFilter;
-import com.microsoft.windowsazure.mobileservices.http.ServiceFilterRequest;
-import com.microsoft.windowsazure.mobileservices.http.ServiceFilterResponse;
-import com.microsoft.windowsazure.mobileservices.table.MobileServiceJsonTable;
 import com.microsoft.windowsazure.mobileservices.table.MobileServiceTable;
 
-import static com.microsoft.windowsazure.mobileservices.table.query.QueryOperations.*;
+// Azure Mobile Services Notifications
+import com.microsoft.windowsazure.notifications.NotificationsManager;
 
 public class TimelineActivity extends Activity {
 
     private ArrayList<Tweet> tweetList = new ArrayList<Tweet>();
     private TweetAdapter tweetAdapter;
 
-    private MobileServiceClient mobileServiceClient;
+    public static MobileServiceClient mobileServiceClient;
     private MobileServiceTable<Tweet> mobileServiceTable;
 
     private EditText tweetInput;
@@ -44,6 +36,8 @@ public class TimelineActivity extends Activity {
     private Button tweetButton;
 
     private String author;
+
+    public static final String SENDER_ID = "tidal-fusion-91116";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,6 +66,8 @@ public class TimelineActivity extends Activity {
 
         // Get some tweets, yo
         GetTweets();
+
+        NotificationsManager.handleNotifications(this, SENDER_ID, AzureNotificationsHandler.class);
     }
 
     public void AddTweet() {
