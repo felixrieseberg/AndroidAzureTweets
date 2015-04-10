@@ -28,5 +28,5 @@ dependencies {
     // Square
     compile 'com.squareup.picasso:picasso:2.5.2'
     // Google Play
-    compile 'com.google.android.gms:play-services-base:7.0.0'
+    compile 'com.google.android.gms:play-services:7.0.0'
 }

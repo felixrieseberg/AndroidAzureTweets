@@ -37,7 +37,7 @@ public class TimelineActivity extends Activity {
 
     private String author;
 
-    public static final String SENDER_ID = "tidal-fusion-91116";
+    public static final String SENDER_ID = "440808171208";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
