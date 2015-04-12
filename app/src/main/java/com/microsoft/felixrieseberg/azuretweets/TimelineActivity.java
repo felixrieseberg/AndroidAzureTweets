@@ -31,10 +31,7 @@ public class TimelineActivity extends Activity {
     private MobileServiceTable<Tweet> mobileServiceTable;
 
     private EditText tweetInput;
-    private EditText authorInput;
     private ListView tweetsListView;
-    private Button tweetButton;
-
     private String author;
 
     public static final String SENDER_ID = "440808171208";
